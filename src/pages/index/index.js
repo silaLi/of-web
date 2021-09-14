@@ -6,7 +6,9 @@ function sleep(time) {
   });
 }
 
-async function init() {
-  await sleep(3000);
+function init() {
+  sleep(3000).then(() => {
+    console.log(99992)
+  });
 }
 init();
