@@ -1,6 +1,52 @@
-.header{
-  position: relative;
-  .aaa{
-    color: red;
+.footer {
+  background: #262626;
+  padding-top: 65px;
+  .wrapper {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    .right {
+      flex: 1;
+      display: flex;
+      nav {
+      }
+      nav + nav {
+        margin-left: 40px;
+      }
+      a {
+        margin: 0.5em 0;
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+        text-decoration: none;
+      }
+      h5 {
+        margin: 0;
+        a {
+          font-size: 20px;
+          margin: 0 0 0.8em;
+        }
+      }
+    }
+
+    .qrcode {
+      img {
+        display: block;
+        width: 100%;
+      }
+      span {
+        margin-top: 24px;
+        display: block;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+  .copy-right {
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
   }
 }
