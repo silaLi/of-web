@@ -1,14 +1,5 @@
-function sleep(time) {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res();
-    }, time);
+$(function () {
+  new Swiper(".swiper-container", {
+    autoplay: true, //可选选项，自动滑动
   });
-}
-
-function init() {
-  sleep(3000).then(() => {
-    console.log(99992)
-  });
-}
-init();
+});

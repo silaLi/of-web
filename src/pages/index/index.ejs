@@ -5,10 +5,245 @@
 
   <body>
     <%- include('../layout-header/header'); -%>
-    <div>
-      <h1><%= page.title %></h1>
-      <div>222</div>
-      <div><%= page.pageName %></div>
+    <div class="<%= page.pageName %>">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <% page.swiper1.forEach(function(silde, index){ %>
+          <div class="swiper-slide">
+            <section class="module-<%= index+1 %>">
+              <div class="wrapper">
+                <div class="hide">
+                  <h2 class="titel"><%= silde.title %></h2>
+                  <h3><%= silde.p1 %></h3>
+                  <h4><%= silde.p2 %></h4>
+                  <p>咨询热线：158-0235-1430</p>
+                </div>
+                <button class="hide-action action-try-1">免费试用</button>
+              </div>
+            </section>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+      <section class="module-5">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>有赞·六维微商城</h2>
+            <h3>全行业全场景的电商解决方案</h3>
+            <p>专业的微商城系统，一体化的新零售全渠道解决方案</p>
+            <p>
+              一键对接互联网社交流量平台(小程序、微信、QQ、微博、今日头条等)
+            </p>
+
+            <p>获取外部新粉丝营销顾问专业培训获客技巧，效果立现，</p>
+            <p>成本可控对接流量联盟，自媒体矩阵联合推广</p>
+            <p>一站式的培训服务体系，轻松做成交</p>
+            <p>新手教程/有赞学院/有赞商盟/服务经理</p>
+            <p>多元化营销工具助力业绩新高</p>
+            <p>
+              会员标签化管理，推送不同图文内容，实现个性化营销，精准触达目标客群
+            </p>
+          </div>
+          <button class="hide-action action-1 action-try-2">免费试用</button>
+          <button class="hide-action action-2 action-try-2">免费试用</button>
+        </div>
+      </section>
+      <section class="module-6">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>有赞·六维小程序</h2>
+            <h3>流量获取场景的营销解决方案</h3>
+            <p>更懂电商的小程序</p>
+            <p>快速开店，一键接入，无需开发</p>
+            <p>一键授权，无需任何开发，即可拥有自己的小程序</p>
+            <p>30 多种行业模版任意选择，搭建自己的个性化小程序</p>
+            <p>订单直接跟微商城或者零售店铺打通，无需额外运营成本，轻松管理</p>
+            <p>附近的小程序、微信搜索等功能，让你轻松获取流量，抓住客户</p>
+            <p>优惠券 / 码、 满减 / 送、 多人拼团等多种营销 玩 法， 抓住流量</p>
+            <p>流畅体验，用完即走，降低用户门槛，宣传推广低成本高转化</p>
+          </div>
+          <button class="hide-action action-1 action-try-2">免费试用</button>
+          <button class="hide-action action-2 action-try-2">免费试用</button>
+        </div>
+      </section>
+      <section class="module-7">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>有赞·六维教育</h2>
+            <h3>教育机构的互联网经营解决方案</h3>
+            <p>丰富的招生拓客工具</p>
+            <p>多渠道搜集客户线索，裂变式招生，降低推广成本</p>
+            <p>高效的线索管理转化</p>
+            <p>线索跟进、记录，回访提醒，发掘线索价值</p>
+            <p>清晰的教务管理体系</p>
+            <p>排课消课、学员生命周期管理，提升运营效率</p>
+            <p>多样的互动督学手段</p>
+            <p>打卡、证书、奖励，提升教学效果，促进口碑传播</p>
+            <p>推荐使用有赞多校区，一体化经营管理解决方案</p>
+          </div>
+          <button class="hide-action action-1 action-try-2">免费试用</button>
+          <button class="hide-action action-2 action-try-2">免费试用</button>
+        </div>
+      </section>
+      <section class="module-8">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>有赞·六维零售</h2>
+            <h3>店铺经营场景的一体化解决方案</h3>
+            <p>只卖客户需要的商品</p>
+            <p>智能分析消费者喜好需求，让你随时了解库存变动及时调</p>
+            <p>整，一键配送让商品流通更高效</p>
+            <p>激发用户成为你最好的销售员</p>
+            <p>你只需做好产品和服务，我们会推出时下最热的营销工具和</p>
+            <p>方法，帮你提高传播和成交效率</p>
+            <p>维系老客，复购率提升 40%</p>
+            <p>沉淀用户数据，做好用户分层，实现精准营销和个性化服</p>
+            <p>务；储值卡礼品卡，帮你提前锁定购买力，提高老客忠诚度</p>
+          </div>
+          <button class="hide-action action-1 action-try-2">免费试用</button>
+          <button class="hide-action action-2 action-try-2">免费试用</button>
+        </div>
+      </section>
+      <section class="module-9">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>有赞·六维客户案例</h2>
+            <h3>为超过36个行业和场景提供经营解决方案</h3>
+            <p>门店导购6大痛点，靠企业微信竟能轻松...</p>
+            <p>抖音狂推的「兴趣电商」到底是什么？</p>
+            <p>到底什么是“兴趣电商”？</p>
+            <p>现在，打开企业微信看视频号</p>
+            <p>想用微信视频号带货？有赞支持所有商家申...</p>
+            <p>微信又更新啦，社群、视频号更新被全网叫好</p>
+          </div>
+        </div>
+      </section>
+      <section class="module-10">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>经营场景</h2>
+            <h3>丰富多样的营销玩法覆盖所有经营场景</h3>
+            <h4>获客拉新</h4>
+            <p>多人拼团、销售员、 瓜分券、团购返现...</p>
+            <h4>下单转化</h4>
+            <p>限时折扣、优惠券、 降价拍、秒杀…</p>
+            <h4>提高客单</h4>
+            <p>打包一口价、优惠套 餐、满减送..</p>
+            <h4>留存复购</h4>
+            <p>积分商城、会员储 值、会员卡、签到…</p>
+          </div>
+        </div>
+      </section>
+      <section class="module-11">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>360°全方位一站式服务</h2>
+            <h4>专业客服答疑</h4>
+            <p>7*12小时专业指导 答疑解惑</p>
+            <h4>线上视频教学</h4>
+            <p>随时随地学习，提升能力</p>
+            <h4>同行交流活动</h4>
+            <p>直播、社区、商盟，实战分享</p>
+            <h4>运营者特训营</h4>
+            <p>培训优良运营人群，轻松招人</p>
+          </div>
+        </div>
+      </section>
+      <section class="module-12">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>7年技术积累 成就行业领先</h2>
+            <h4>在产品和技术上秒杀同行的 SAAS 企业</h4>
+            <strong>99.9%</strong>
+            <p>系统稳定性 全行业领先</p>
+            <strong>3000+</strong>
+            <p>全国 CDN 加速节点 覆盖所有城市</p>
+            <strong>1.05S</strong>
+            <p>用户端页面打开速度 比肩 BAT</p>
+            <strong>57%</strong>
+            <p>工程师曾就职于 BAT 技术团队</p>
+            <strong>100</strong>
+            <p>平均每周技术 升级更新次数</p>
+            <strong>1’</strong>
+            <p>网络攻击 1 分钟内 自动防御切换</p>
+          </div>
+        </div>
+      </section>
+      <section class="module-13">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>专业的微商城系统</h2>
+            <h4>一体化的新零售全渠道解决方案</h4>
+            <h5>快速获客</h5>
+            <h6>帮助商家更有效的获取新客户</h6>
+            <p>
+              一键对接互联网社交流量平台（小程序、微信、QQ、微
+              博、今日头条等）获取外部新粉丝营销顾问专业培训获客
+              技巧，成本可控对接流量联盟
+            </p>
+            <h4>沉淀 老客户</h4>
+            <h5>构建商家自有会员体系</h5>
+            <p>
+              拒绝流量外逃，提供会员储值功能和会员卡体系，建立会
+              员黏性会员标签化管理，推送不同图文内容，实现个性化
+              营销，精准触达目标客群
+            </p>
+            <h4>复购成交</h4>
+            <h5>多元化营销工具助力业绩新高</h5>
+            <p>
+              拒绝流量外逃，提供会员储值功能和会员卡体系，建立会
+              员黏性会员标签化管理，推送不同图文内容，实现个性化
+              营销，精准触达目标客群
+            </p>
+            <h4>货品 网络分销</h4>
+            <h5>入驻分销平台，开拓卖货铺货新渠道</h5>
+            <p>
+              海量商品、一键上架、一件代发、自动分账进货低成本、
+              销售高利润，分销平台严选优质货源
+            </p>
+            <h4>流量订单 转化</h4>
+            <h5>帮助商家快速搭建专属微商城</h5>
+            <p>
+              商品信息一键导入，店铺模版个性选择费用透明，无佣
+              金、无扣点支持商家各种经营业务场景
+            </p>
+            <h4>培训能力 提升</h4>
+            <h5>一站式的培训服务体系</h5>
+            <p>新手教程 / 有赞学院 / 有赞商盟 / 服务经理</p>
+          </div>
+        </div>
+      </section>
+      <section class="module-14">
+        <div class="wrapper">
+          <div class="hide">
+            <h2>微商城服务超4亿消费者</h2>
+            <strong>巨铸</strong>
+            <strong>鸡本无敌</strong>
+            <strong>DASH编程学院</strong>
+            <strong>追银族</strong>
+            <strong>新津城市名人酒店</strong>
+            <strong>天府通</strong>
+            <strong>TSINGTAO青岛啤酒</strong>
+            <strong>Joyoung九阳</strong>
+            <strong>秦巴田园</strong>
+            <strong>藏地金稞</strong>
+            <strong>申达美业</strong>
+            <strong>爱之食燕窝</strong>
+            <strong>吉满屋</strong>
+            <strong>乔丹</strong>
+            <strong>小就坎</strong>
+            <strong>好孩子</strong>
+            <strong>江小白</strong>
+            <strong>纸护士</strong>
+            <strong>多乐士</strong>
+            <strong>阿婆严选</strong>
+            <strong>琪采</strong>
+            <strong>starbucks星巴克</strong>
+            <strong>supor苏泊尔</strong>
+            <strong>新东方XDF.CN</strong>
+          </div>
+        </div>
+      </section>
     </div>
     <%- include('../layout-footer/footer'); -%>
   </body>

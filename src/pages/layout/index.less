@@ -1,0 +1,43 @@
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+.hide-action {
+  opacity: 0;
+}
+.wrapper {
+  width: 1216px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  opacity: 1;
+  outline: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: block;
+  &::after {
+    display: none;
+  }
+}
+.action-try {
+  position: absolute;
+  cursor: pointer;
+}
+.action-try-1 {
+  .action-try;
+  width: 128px;
+  height: 42px;
+}
+.action-try-2 {
+  .action-try;
+  width: 116px;
+  height: 35px;
+}
