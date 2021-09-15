@@ -3,27 +3,32 @@ const gulp = require("gulp");
 const ejs = require("gulp-ejs");
 const rename = require("gulp-rename");
 const less = require("gulp-less");
+
 const LessPluginAutoPrefix = require("less-plugin-autoprefix");
 const autoprefix = new LessPluginAutoPrefix({
   browsers: ["last 2 versions", "ie 11"],
 });
-const minifyCss = require("gulp-minify-css");
+// const minifyCss = require("gulp-minify-css");
 const clean = require("gulp-clean");
 const babel = require("gulp-babel");
+const replace = require("gulp-replace");
 
 //#region copy
 function copyClean() {
   return gulp.src(["dest/static/**"], {
-    read: false
-  }).pipe(clean());
+    read: false,
+    allowEmpty: true,
+  });
+  // .pipe(clean());
 }
 
 function copyCompile() {
-  return gulp.src(["src/static/**"]).pipe(gulp.dest("dest/static/"));
+  return gulp.src(["src/static/**/*.*"]).pipe(gulp.dest("dest/static"));
 }
 
 function copyWatch() {
   gulp.watch(["src/static/**"], gulp.series(copyClean, copyCompile));
+  // copyCompile();
   gulp.series(copyClean, copyCompile)();
 }
 //#endregion
@@ -31,14 +36,17 @@ function copyWatch() {
 // https://v3.gulpjs.com.cn/docs/recipes/browserify-with-globs/
 //#region js编译
 function jsClean() {
-  return gulp.src("dest/js/*.js", {
-    read: false
-  }).pipe(clean());
+  return gulp
+    .src("dest/js/*.js", {
+      read: false,
+      allowEmpty: true,
+    })
+    .pipe(clean());
 }
 
 function jsCompile() {
   return gulp
-    .src(["./src/pages/*/index.js"])
+    .src(["./src/pages/*/index.js"], { allowEmpty: true })
     .pipe(
       babel({
         presets: [
@@ -73,35 +81,38 @@ function jsWatch() {
 }
 //#endregion
 
-
 //#region css编译
 function cssClean() {
-  return gulp.src("dest/styles/*.css", {
-    read: false
-  }).pipe(clean());
+  return gulp
+    .src("dest/styles/*.css", {
+      read: false,
+      allowEmpty: true,
+    })
+    .pipe(clean());
 }
 
 function cssCompile() {
   return (
     gulp
-    .src(["./src/pages/*/index.less"])
-    .pipe(
-      less({
-        plugins: [autoprefix],
-      })
-    )
-    // 压缩为一行
-    // .pipe(minifyCss())
-    .pipe(
-      rename((filePath) => {
-        return {
-          dirname: "",
-          basename: filePath.dirname,
-          extname: ".css",
-        };
-      })
-    )
-    .pipe(gulp.dest("dest/styles"))
+      .src(["./src/pages/*/index.less"], { allowEmpty: true })
+      .pipe(
+        less({
+          plugins: [autoprefix],
+        })
+      )
+      // 压缩为一行
+      // .pipe(minifyCss())
+      .pipe(
+        rename((filePath) => {
+          return {
+            dirname: "",
+            basename: filePath.dirname,
+            extname: ".css",
+          };
+        })
+      )
+      .pipe(replace("../../static/", "../static/"))
+      .pipe(gulp.dest("dest/styles"))
   );
 }
 
@@ -111,20 +122,22 @@ function cssWatch() {
 }
 //#endregion
 
-
 //#region html编译
 function htmlClean() {
-  return gulp.src("dest/*.html", {
-    read: false
-  }).pipe(clean());
+  return gulp
+    .src("dest/*.html", {
+      read: false,
+      allowEmpty: true,
+    })
+    .pipe(clean());
 }
 
 function htmlCompile() {
   const list = fs.readdirSync("src/pages/");
   const data = list.reduce((prev, pageName) => {
-    let json = {}
+    let json = {};
     try {
-      json = fs.readJSONSync(`src/pages/${pageName}/index.json`)
+      json = fs.readJSONSync(`src/pages/${pageName}/index.json`);
     } catch (e) {}
     return {
       ...prev,
@@ -135,7 +148,7 @@ function htmlCompile() {
     };
   }, {});
   return gulp
-    .src("./src/pages/*/index.ejs")
+    .src("./src/pages/*/index.ejs", { allowEmpty: true })
     .pipe(ejs(data))
     .pipe(
       rename((filePath) => {
@@ -146,6 +159,7 @@ function htmlCompile() {
         };
       })
     )
+    .pipe(replace("../../static/", "./static/"))
     .pipe(gulp.dest("dest"));
 }
 
