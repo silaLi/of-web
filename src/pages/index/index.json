@@ -1,5 +1,6 @@
 {
   "title": "首页",
   "keywords": "首页",
-  "description": "首页1"
+  "description": "首页1",
+  "grandfather": "index"
 }
