@@ -11,7 +11,7 @@ $(function () {
 
   // 显示手机输入
   $(
-    ".action-try, .action-try-1, .action-try-2, .action-try-3, .action-try-4, .try-action-5"
+    ".action-try, .action-try-1, .action-try-2, .action-try-3, .action-try-4, .action-try-5"
   ).on("click", function () {
     phoneDialog.show();
   });
