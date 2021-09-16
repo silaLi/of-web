@@ -1,19 +1,60 @@
 <header class="header">
-  <a href="" class="header-item">
+  <a href="index.html" class="header-item">
     <img src="./static/assets/logo.png" alt="" />
   </a>
   <a
-    href="/index.html"
+    href="index.html"
     class="header-item-text <%= page.grandfather == 'index' ? 'active' : '' %>"
     >首页</a
   >
   <a
-    href="price0.html"
-    class="header-item-text <%= page.grandfather == 'price0' ? 'active' : '' %>"
+    href="price02.html"
+    class="
+      header-item-text
+      <%=
+      page.grandfather
+      ==
+      'price02'
+      ?
+      'active'
+      :
+      ''
+      %>
+    "
     >0元咨询</a
   >
-  <a href="serviceitems03.html" class="header-item-text">服务项目</a>
-  <a href="" class="header-item-text">运营服务</a>
+  <a
+    href="serviceitems03.html"
+    class="
+      header-item-text
+      <%=
+      page.grandfather
+      ==
+      'serviceitems03'
+      ?
+      'active'
+      :
+      ''
+      %>
+    "
+    >服务项目</a
+  >
+  <a
+    href=""
+    class="
+      header-item-text
+      <%=
+      page.grandfather
+      ==
+      'operation04'
+      ?
+      'active'
+      :
+      ''
+      %>
+    "
+    >运营服务</a
+  >
   <a href="" class="header-item-text">客户案例</a>
   <a href="" class="header-item-text">公司简介</a>
 </header>
