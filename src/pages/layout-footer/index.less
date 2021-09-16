@@ -5,14 +5,67 @@
   height: 310px;
   overflow: hidden;
   width: 100%;
+  z-index: 100;
   .bg {
     position: absolute;
+    width: 1920px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .phone-dialog-wrapper {
+    position: absolute;
+    width: 1920px;
+    height: 100%;
     top: 0;
     left: 50%;
     transform: translate(-50%);
   }
   .close {
     position: absolute;
+    left: 1588px;
+    top: 115px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .input {
+    text-indent: 56px;
+
+    font-size: 18px;
+    line-height: 28px;
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 1081px;
+    top: 139px;
+    width: 422px;
+    height: 48px;
+
+    outline: 0;
+    margin: 0;
+    border: 0;
+    padding: 10px 0;
+
+    background: transparent;
+    &::after {
+      display: none;
+    }
+  }
+  .submit-action {
+    position: absolute;
+    width: 190px;
+    height: 40px;
+    cursor: pointer;
+    top: 215px;
+  }
+  .submit-action-1 {
+    .submit-action;
+    left: 1079px;
+  }
+  .submit-action-2 {
+    .submit-action;
+    left: 1315px;
   }
 }
 .footer {
