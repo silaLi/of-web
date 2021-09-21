@@ -1,3 +1,8 @@
+<% page.h1 && page.h1.forEach(function(_h1, index){ %>
+<h1 class="hide"><%= _h1 %></h1>
+<% }); %> <% page.h2 && page.h2.forEach(function(_h2, index){ %>
+<h2 class="hide"><%= _h2 %></h2>
+<% }); %>
 <header class="header">
   <a href="index.html" class="header-item">
     <img src="./static/assets/logo.png" alt="" />
