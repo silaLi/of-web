@@ -152,9 +152,24 @@ function htmlCompile() {
     .pipe(ejs(data))
     .pipe(
       rename((filePath) => {
+        const HTMLMAP = {
+          price02: "0yuan",
+          serviceitems03: "services",
+          operation04: "operations",
+          client05: "cases",
+          companyprofile06: "aboutus",
+          miniStore21: "wsc",
+          miniprogram22: "xcx",
+          education23: "jy",
+          retail24: "ls",
+          distribution25: "fxpt",
+          marketing26: "yxyy",
+          live27: "zbds",
+          customization28: "lwdz",
+        };
         return {
           dirname: "",
-          basename: filePath.dirname,
+          basename: HTMLMAP[filePath.dirname] || filePath.dirname,
           extname: ".html",
         };
       })

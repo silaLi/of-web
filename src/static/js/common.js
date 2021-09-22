@@ -26,31 +26,32 @@ $(function () {
       return alert("请输入正确格式的手机号码");
     }
     loading = true;
+    // var data = {
+    //   corpid: 12912051,
+    //   APPID: "APPID788470583934320640",
+    //   APPSECRET: "PXn07J6md8X0vIJxKHd",
+    //   list: [
+    //     {
+    //       followUserId: 7689179,
+    //       mobile: phone,
+    //       name: "",
+    //     },
+    //   ],
+    //   optUserId: 16618741,
+    // };
     var data = {
-      corpid: 12912051,
-      APPID: "APPID788470583934320640",
-      APPSECRET: "PXn07J6md8X0vIJxKHd",
-      list: [
-        {
-          followUserId: 7689179,
-          mobile: phone,
-          name: "",
-        },
-      ],
-      optUserId: 16618741,
+      phone: phone,
     };
     $.ajax({
-      url: "https://open.workec.com/v2/customer/addCustomer",
+      // url: "https://open.workec.com/v2/customer/addCustomer",
+      url: "//112.74.111.91/api/customer/createCustomer",
       type: "post",
-      dataType: "JSON",
+      dataType: "json",
+      contentType: "application/json",
       data: JSON.stringify(data),
       timeout: 10000,
       success(rsp) {
-        if (
-          rsp.code === 200 &&
-          rsp.data.successIdList &&
-          rsp.data.successIdList.length > 0
-        ) {
+        if (rsp.code === 200) {
           alert("数据保存成功");
           phoneElem.val("");
         }
