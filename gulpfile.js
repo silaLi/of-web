@@ -133,7 +133,7 @@ function htmlClean() {
 }
 
 function htmlCompile() {
-  const list = fs.readdirSync("src/pages/");
+  const list = fs.readdirSync("src/pages");
   const data = list.reduce((prev, pageName) => {
     let json = {};
     try {

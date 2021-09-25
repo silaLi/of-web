@@ -11,9 +11,50 @@ $(function () {
 
   // 显示手机输入
   $(
-    ".action-try, .action-try-1, .action-try-2, .action-try-3, .action-try-4, .action-try-5"
+      ".action-try, .action-try-1, .action-try-2, .action-try-3, .action-try-4, .action-try-5"
   ).on("click", function () {
     phoneDialog.show();
+  });
+
+  $(
+    ".go-retail"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/ls')
+  });
+  $(
+      ".go-live"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/zbds')
+  });
+  $(
+      ".go-education"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/jy')
+  });
+  $(
+      ".go-distribution"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/fxpt')
+  });
+  $(
+      ".go-mini-program"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/xcx')
+  });
+  $(
+      ".go-mini-store"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/wsc')
+  });
+  $(
+      ".go-customization"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/lwdz')
+  });
+  $(
+      ".go-marketing"
+  ).on("click", function () {
+    window.open('https://www.scyouzan.com/services/yxyy')
   });
 
   var loading = false;
@@ -44,10 +85,14 @@ $(function () {
     };
     $.ajax({
       // url: "https://open.workec.com/v2/customer/addCustomer",
-      url: "//112.74.111.91/api/customer/createCustomer",
+      url: "https://www.scyouzan.com/api/customer/createCustomer",
       type: "post",
       dataType: "json",
       contentType: "application/json",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "*/*",
+      },
       data: JSON.stringify(data),
       timeout: 10000,
       success(rsp) {

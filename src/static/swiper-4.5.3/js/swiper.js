@@ -5262,7 +5262,7 @@
           if (params.renderBullet) {
             paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
           } else {
-            paginationHTML += "<" + (params.bulletElement) + " class=\"" + (params.bulletClass) + "\"></" + (params.bulletElement) + ">";
+            paginationHTML += "<" + (params.bulletElement) + " class=\"" + (params.bulletClass) + "\"><" + (params.bulletElement) + ">";
           }
         }
         $el.html(paginationHTML);
@@ -7087,7 +7087,7 @@
       var slide = swiper.slides.eq(index);
       var value = History.slugify(slide.attr('data-history'));
       if (!win.location.pathname.includes(key)) {
-        value = key + "/" + value;
+        value = key + "" + value;
       }
       var currentState = win.history.state;
       if (currentState && currentState.value === value) {
